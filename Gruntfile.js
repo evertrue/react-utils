@@ -6,6 +6,10 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
+    clean: {
+      tests: ["test/compiled/**/*.js"]
+    },
+
     react: {
       dev: {
         files: {
@@ -33,5 +37,5 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('default', ["react:dev"]);
-  grunt.registerTask('test', ["react:dev", "react:test", "jasmine"]);
+  grunt.registerTask('test', ["clean:tests", "react:dev", "react:test", "jasmine"]);
 };

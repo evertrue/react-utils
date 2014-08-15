@@ -1,6 +1,60 @@
 /** * @jsx React.DOM */
 var Utils = Utils || {};
 
+Utils.ListItem = React.createClass({displayName: 'ListItem',
+  render: function() {
+    return React.DOM.span(null, 
+      this.props[this.props.itemProp] || this.props.item
+    )
+  }
+});
+
+/** * @jsx React.DOM */
+var Utils = Utils || {};
+
+Utils.ListRepeat = React.createClass({displayName: 'ListRepeat',
+  propTypes: {
+    list: React.PropTypes.oneOfType([
+      React.PropTypes.array,
+      React.PropTypes.object
+    ]),
+    itemProp: React.PropTypes.string,
+    children: React.PropTypes.component
+  },
+
+  cloneChild: function(item) {
+    var child = this.props.children,
+        propsToClone = {itemProp: this.props.itemProp};
+
+    propsToClone[this.props.itemProp || "item"] = item;
+    return React.addons.cloneWithProps(child, propsToClone);
+  },
+
+  repeatChildren: function() {
+    var self = this,
+        len = self.props.list.length,
+        output = [];
+
+    for (var i=0; i<len; i++) {
+      output.push(
+        React.DOM.li({key: i+len}, 
+          this.cloneChild(self.props.list[i])
+        )
+      );
+    }
+    return output;
+  },
+
+  render: function() {
+    return React.DOM.ul({className: "r-util--list " + (this.props.className || "")}, 
+      this.repeatChildren()
+    )
+  }
+});
+
+/** * @jsx React.DOM */
+var Utils = Utils || {};
+
 Utils.ShowHide = React.createClass({displayName: 'ShowHide',
   propTypes: {
     show: React.PropTypes.bool,
