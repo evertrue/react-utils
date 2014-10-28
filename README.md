@@ -9,14 +9,14 @@ Requires React 0.11 or higher
 Use the follow JSX in the `render` function of any react component.
 
 #### Utils.ShowHide
-```js
+```jsx
   <Utils.ShowHide show={true}> 
     Show This Content 
   </Utils.ShowHide>
 ```
 
 #### Utils.Switch
-```js
+```jsx
   <Utils.Switch on="strawberry">
     <div when="apple">Apple</div>
     <div when="bannana">Bannana</div>
@@ -25,7 +25,7 @@ Use the follow JSX in the `render` function of any react component.
 ```
 
 #### Utils.ListRepeat
-```js
+```jsx
   var links = [
     {link: "http://google.com", label: "Google"},
     {link: "http://yahoo.com", label: "Yahoo"}
