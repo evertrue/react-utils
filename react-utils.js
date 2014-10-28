@@ -1,18 +1,18 @@
 (function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([], function () {
-      return (root.returnExportsGlobal = factory());
+    define(["React"], function (React) {
+      return (root.returnExportsGlobal = factory(React));
     });
   } else if (typeof exports === 'object') {
     // Node. Does not work with strict CommonJS, but
     // only CommonJS-like enviroments that support module.exports,
     // like Node.
-    module.exports = factory();
+    module.exports = factory(require("React"));
   } else {
-    factory();
+    factory(React);
   }
-}(this, function () {
+}(this, function (React) {
 
 /** * @jsx React.DOM */
 var Utils = Utils || {};

@@ -12,7 +12,13 @@ module.exports = function(grunt) {
 
     umd: {
       all: {
-        src: "react-utils.js"
+        src: "react-utils.js",
+        deps: {
+          "default": ["React"],
+          amd: ["React"],
+          cjs: ["React"],
+          global: ["React"]
+        }
       }
     },
 
