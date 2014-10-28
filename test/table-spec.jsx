@@ -1,23 +1,10 @@
 /** * @jsx React.DOM */
 
 var friends = [
-   {name: "Julie", dob: "5/12/90", phone: "999-888-7777"},
-   {name: "Jordan", dob: "3/14/87", phone: "555-555-555"},
-   {name: "Jax", dob: "5/12/90", phone: "123-123-1234"}
+   {name: "John", dob: "5/12/90", phone: "999-888-7777"},
+   {name: "Jane", dob: "3/14/87", phone: "555-555-555"},
+   {name: "Joe", dob: "5/12/90", phone: "123-123-1234"}
 ];
-
-// func = (item) -> format(item.dob)
-
-// <Table data={friends}>
-//    <TableCol property="name" header="Friend's Name" />
-//    <TableCol property={func} header="Birthday" />
-// </Table>
-
-
-// TableCol Props
-//    property: renderable or string
-//    header: renderable or string
-
 
 describe("<Utils.Table />", function(){
 

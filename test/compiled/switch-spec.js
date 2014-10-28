@@ -27,4 +27,17 @@ describe("<Utils.Switch />", function(){
     expect(switchChild.getDOMNode().innerHTML).toBe("Other");
   });
 
+  it("works with boolean values", function(){
+    var hello = undefined;
+    var instance = React.addons.TestUtils.renderIntoDocument(
+      Utils.Switch({on: !!hello}, 
+        React.DOM.div({when: false}, "False"), 
+        React.DOM.div({when: true}, "True")
+      )
+    );
+
+    switchChild = React.addons.TestUtils.findRenderedDOMComponentWithTag(instance, "div");
+    expect(switchChild.getDOMNode().innerHTML).toBe("False");
+  });
+
 });

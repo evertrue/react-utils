@@ -14,6 +14,7 @@ Utils.Switch = React.createClass({
 
     for (var i=0; i<len; ++i) {
       var kid = self.props.children[i];
+
       if (kid.props.when == self.props.on) {
         displayChild = kid;
       } else if (kid.props.when == "default") {
