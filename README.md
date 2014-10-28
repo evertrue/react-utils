@@ -1,19 +1,47 @@
-# EverTrue React-Utils
+# React-Utils
 
-React utility components, to make simple components easier. Takes ideas from default Angular directives.
+A collection of unstyled [React JS](http://facebook.github.io/react/) utility components, that make common coding tasks cleaner and easier to write. Inspired by default Angualr directives like `ng-repeat` and `ng-show`.
 
-## Setup
+Requires React 0.11 or higher
 
-Clone the repository and run `npm install`
+## Usage
 
-## Development
+#### Utils.ShowHide
+```js
+  <Utils.ShowHide show={true}> 
+    Show This Content 
+  </Utils.ShowHide>
+```
 
-You should be developing in the `/src` folder. Run `grunt` to concat and compile all files into `react-utils.js`
+#### Utils.Switch
+```js
+  <Utils.Switch on="strawberry">
+    <div when="apple">Apple</div>
+    <div when="bannana">Bannana</div>
+    <div when="default">Other</div>
+  </Utils.Switch>
+```
 
-## Tests
+#### Utils.ListRepeat
+```js
+  var links = [
+    {link: "http://google.com", label: "Google"},
+    {link: "http://yahoo.com", label: "Yahoo"}
+  ];
 
-Run `grunt test` to build and run tests for all components.
+  <Utils.ListRepeat list={links} itemProp="item">
+    <MockComponent />
+  </Utils.ListRepeat>
+```
 
-## Authors
+
+### Contributing
+
+* Clone the repository and run `npm install`
+* Run `grunt` to concat and compile all files into `react-utils.js`
+* Run `grunt test` to build and run tests for all components
+
+
+### Authors
 
 * [Julie Reitter](http://github.com/julieReitter)
