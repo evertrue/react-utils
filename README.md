@@ -6,6 +6,8 @@ Requires React 0.11 or higher
 
 ## Usage
 
+Use the follow JSX in the `render` function of any react component.
+
 #### Utils.ShowHide
 ```js
   <Utils.ShowHide show={true}> 
