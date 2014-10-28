@@ -10,6 +10,12 @@ module.exports = function(grunt) {
       tests: ["test/compiled/**/*.js"]
     },
 
+    umd: {
+      all: {
+        src: "react-utils.js"
+      }
+    },
+
     react: {
       dev: {
         files: {
@@ -34,8 +40,10 @@ module.exports = function(grunt) {
         }
       }
     }
+
+
   });
 
-  grunt.registerTask('default', ["react:dev"]);
-  grunt.registerTask('test', ["clean:tests", "react:dev", "react:test", "jasmine"]);
+  grunt.registerTask('default', ["react:dev", "umd:all"]);
+  grunt.registerTask('test', ["clean:tests", "react:dev", "umd:all", "react:test", "jasmine"]);
 };
